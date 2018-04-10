@@ -9,6 +9,7 @@
          <thead>
            <tr>
                <th>ID</th>
+               <th>Photo</th>
                <th>Name</th>
                <th>Email</th>
                <th>Role</th>
@@ -24,7 +25,8 @@
              @foreach($users as $user)
            <tr>
              <td>{{$user->id}}</td>
-             <td>{{$user->name}}</td>
+             <td><img height="30" src="{{$user->photo ? $user->photo->file : 'http://via.placeholder.com/50x50'}}" alt=""></td>
+             <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
              <td>{{$user->email}}</td>
              <td>{{$user->role->name}}</td>
              <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}</td>
