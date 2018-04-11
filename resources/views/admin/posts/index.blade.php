@@ -32,7 +32,7 @@
            <tr>
              <td>{{$post->id}}</td>
              <td><img height="30" src="{{$post->photo_id ? $post->photo->file : 'http://via.placeholder.com/50x50' }}" alt=""></td>
-             <td>{{$post->user->name}}</td>
+             <td><a href="{{route('posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
              <td>{{$post->category ? $post->category->name : 'Un-categorized'}}</td>
              <td>{{$post->title}}</td>
              <td>{{$post->body}}</td>
