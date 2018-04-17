@@ -36,6 +36,8 @@
              <td>{{$post->category ? $post->category->name : 'Un-categorized'}}</td>
              <td>{{$post->title}}</td>
              <td>{{$post->body}}</td>
+               <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
+               <td><a href="{{route('comments.show', $post->id)}}">View Comments</a></td>
              <td>{{$post->created_at->diffForhumans()}}</td>
              <td>{{$post->updated_at->diffForhumans()}}</td>
            </tr>
